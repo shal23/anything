@@ -1,0 +1,32 @@
+<p id="notice"><%= notice %></p>
+
+<%= image_tag(@user_profile.avatar_url) if @user_profile.avatar? %>
+
+<p>
+  <b>About:</b>
+  <%= truncate @user_profile.about %>
+</p>
+
+<p>
+  <b>Hobbies:</b>
+  <%= truncate @user_profile.hobbies %>
+</p>
+
+<p>
+  <b>Github:</b>
+  <%= @user_profile.github %>
+</p>
+
+<p>
+  <b>Facebook:</b>
+  <%= @user_profile.facebook %>
+</p>
+
+<p>
+  <b>User:</b>
+  <%= link_to @user_profile.user.name, @user_profile.user %>
+</p>
+
+
+<%= link_to 'Edit', edit_user_profile_path(@user_profile) %> |
+<%= link_to 'Back', user_profiles_path %>

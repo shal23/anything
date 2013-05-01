@@ -1,4 +1,6 @@
 class DeviseCreateUsers < ActiveRecord::Migration
+  add_index :users, :slug, unique: true
+
   def change
     create_table(:users) do |t|
       ## Database authenticatable
