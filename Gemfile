@@ -23,3 +23,4 @@ gem "binding_of_caller", ">= 0.7.1", :group => :development, :platforms => [:mri
 gem "hub", ">= 1.10.2", :require => nil, :group => [:development]
 gem "friendly_id"
 gem "carrierwave"
+gem "acts_as_votable"
