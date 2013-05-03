@@ -11,6 +11,7 @@
 	<%= link_to 'Create your profile', new_user_profile_path, :class => 'btn btn-success' %>
 
 <% end %>
+<% end %>
 
 <% if user_signed_in? %>
 	<%= link_to 'Create group', new_group_path, :class => 'btn btn-primary' %>
@@ -27,6 +28,6 @@
 		<% @groups.each do |group| %>
 			<li><%= link_to group.name, group %></li>
 	
-		<% end %>
+	<% end %>
 	</ul>
 </div>

@@ -27,5 +27,14 @@ Anything::Application.routes.draw do
   end
   root :to => "home#index"
   devise_for :users
-  resources :users
+  resources :users do 
+    member do
+      get :following
+      get :followers
+end
+end 
+
+
+resources :relationships, :only => [:create, :destroy]
+
 end

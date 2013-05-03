@@ -18,3 +18,34 @@
 
 <% end %>
 </table>
+
+
+
+<h3>Following</h3>
+<p><%= @user.name %> is following <strong id="following"><%= @user.followed_users.count %> people!</p></strong>
+
+<p>	<% @user.followed_users.each do |followed_user| %>
+		<%= followed_user.name %></p>
+	<% end %>
+
+<h3>Followed by</h3>
+<p>and is followed by  <%= @user.followers.count %> people.</p></strong>
+
+
+<p>	<% @user.followers.each do |follower| %>
+		<%= follower.name %></p>
+	<% end %>
+
+<br>
+
+<%if user_signed_in? %>
+<% if current_user !=  @user %>
+	<div id="follow_form">
+		<% if current_user.following?(@user) %>
+			<%= render 'unfollow' %>
+		<% else %>
+			<%= render 'follow' %>
+		<% end %>
+	</div>
+<% end %>
+<% end %>
